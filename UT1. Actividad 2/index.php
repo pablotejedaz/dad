@@ -7,42 +7,51 @@
         <?php wp_head(); ?>
     </head>
         <body>
-            <header>
-                <div class="logo">
-                    <h1>Mi Tema</h1>
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/logo.png" alt="Logo">
-                </div>
- 
-                <?php
-                    $arg = array(
-                        'theme_location' => 'main_menu',
-                        'container' => 'nav',
-                        'container_class' => 'main_nav',
-                        'menu_class' => 'menu'
-                    );
-                    wp_nav_menu($arg);
-                ?>
-            </header>
+                <header class="site-header">
+                    <div class="logo">
+                        <h1>Noticias Pablo Tejeda</h1>
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/logo.png" alt="Logo">
+                    </div>
+
+                    <nav class="main_nav">
+                        <ul>
+                            <li><a href="#">Inicio</a></li>
+                            <li><a href="#">Acerca de</a></li>
+                            <li><a href="#">Servicios</a></li>
+                            <li><a href="#">Contacto</a></li>
+                        </ul>
+                    </nav>
+
+                    <?php
+                        $arg = array(
+                            'theme_location' => 'main_menu',
+                            'container' => 'nav',
+                            'container_class' => 'main_nav',
+                            'menu_class' => 'menu'
+                        );
+                    ?>
+                </header>
             <main>
                 <?php
-                    if (have_posts()) {
-                        while (have_posts()) {
-                            the_post();
-                            ?>
-                            <h2><?php the_title(); ?></h2>
-                            <div><?php the_content(); ?></div>
-                            <?php
-                        }
-                    } else {
+                if (have_posts()) {
+                    while (have_posts()) {
+                        the_post();
                         ?>
-                        <p>No se encontraron posts.</p>
+                        <h2><?php the_title(); ?></h2>
+                        <div><?php the_content(); ?></div>
                         <?php
                     }
+                } else {
+                    ?>
+                    <p>No posts found.</p>
+                    <?php
+                }
                 ?>
             </main>
-            <footer>
-                <p>ESTE ES EL FOOTER</p>
-            </footer>
-            <?php wp_footer(); ?>
         </body>
+
+        <?php 
+            get_footer(); 
+        ?>
+
 </html>

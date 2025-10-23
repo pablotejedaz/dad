@@ -11,5 +11,248 @@ Text Domain: Pablo Tejeda
 */
 
 body {
-    background-color: #ff0000;
+    background-color: #ffffff;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #222;
+}
+
+header.site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 40px;
+    background-color: #c8e9ff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    top: 0;
+    z-index: 1000;
+    flex-wrap: wrap;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+header .logo h1 {
+    font-size: 1.5rem;
+    color: #003366;
+    margin: 0;
+    font-weight: bold;
+}
+
+header .logo img {
+    max-height: 60px;
+    height: auto;
+    width: auto;
+}
+
+.main_nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.main_nav ul li {
+    position: relative;
+}
+
+.main_nav ul li a {
+    text-decoration: none;
+    color: #003366;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 8px 4px;
+    transition: all 0.3s ease;
+}
+
+.main_nav ul li a::after {
+    content: "";
+    display: block;
+    width: 0%;
+    height: 2px;
+    background: #005fa3;
+    transition: width 0.3s ease;
+    margin-top: 4px;
+}
+
+.main_nav ul li a:hover {
+    color: #005fa3;
+}
+
+.main_nav ul li a:hover::after {
+    width: 100%;
+}
+
+.site-footer {
+    background-color: #003366;
+    color: #ffffff;
+    padding: 40px 20px 20px;
+    text-align: center;
+    font-size: 0.95rem;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.footer-social,
+.footer-legal {
+    min-width: 200px;
+}
+
+.footer-social h4,
+.footer-legal h4 {
+    color: #c8e9ff;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-social ul,
+.footer-legal ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-social ul li,
+.footer-legal ul li {
+    margin-bottom: 8px;
+}
+
+.footer-social ul li a,
+.footer-legal ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    opacity: 0.85;
+    transition: opacity 0.3s ease, color 0.3s ease;
+}
+
+.footer-social ul li a:hover,
+.footer-legal ul li a:hover {
+    color: #c8e9ff;
+    opacity: 1;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 15px;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #c8e9ff;
+}
+
+main {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+main h2 {
+    font-size: 1.8rem;
+    color: #003366;
+    margin-top: 40px;
+    margin-bottom: 15px;
+    border-left: 5px solid #c8e9ff;
+    padding-left: 10px;
+}
+
+main > div {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px 25px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    margin-bottom: 40px;
+    line-height: 1.7;
+    color: #333;
+}
+
+main img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin: 20px 0;
+}
+
+main a {
+    color: #005fa3;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+main a:hover {
+    color: #003366;
+}
+
+main p {
+    font-size: 1.1rem;
+    color: #555;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.contenido img {
+    max-width: 50%;
+    height: auto;
+    display: block;
+    margin-left: 100px;
+}
+
+@media (max-width: 768px) {
+    header.site-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .main_nav ul {
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 10px;
+    }
+
+    .main_nav ul li a {
+        display: block;
+        padding: 10px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    main {
+        margin: 20px auto;
+        padding: 0 15px;
+    }
+
+    main h2 {
+        font-size: 1.5rem;
+        margin-top: 30px;
+    }
+
+    main > div {
+        padding: 15px 18px;
+        margin-bottom: 30px;
+    }
+
+    main p {
+        font-size: 1rem;
+    }
 }
